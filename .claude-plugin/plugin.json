@@ -1,0 +1,17 @@
+{
+  "name": "clockoff",
+  "version": "0.11.10",
+  "description": "Gym priorities, member and class evidence, and guided campaign drafts through the ClockOff MCP.",
+  "author": {
+    "name": "ClockOff",
+    "url": "https://clockoff.ai"
+  },
+  "homepage": "https://clockoff.ai",
+  "keywords": [
+    "gyms",
+    "F45",
+    "BFT",
+    "campaigns",
+    "Mindbody"
+  ]
+}

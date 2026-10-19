@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "clockoff": {
+      "type": "http",
+      "url": "https://clockoff-preview.appwrite.network/mcp"
+    }
+  }
+}

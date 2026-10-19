@@ -1,0 +1,14 @@
+{
+  "name": "clockoff",
+  "owner": {
+    "name": "ClockOff"
+  },
+  "description": "ClockOff gym skills and remote MCP, installed directly from GitHub.",
+  "plugins": [
+    {
+      "name": "clockoff",
+      "source": "./",
+      "description": "Gym priorities, member and class evidence, and guided campaign drafts through the ClockOff MCP."
+    }
+  ]
+}
