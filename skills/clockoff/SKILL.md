@@ -3,6 +3,11 @@ name: clockoff
 description: Use the connected ClockOff MCP for gym priorities, dated member and class evidence, saved ads and draft campaign planning in any AI assistant.
 ---
 
+### “Here in chat” still means the existing builder
+
+For a campaign-creation request, “here in chat”, “keep the questions here”, “inline”, “native to ChatGPT”, and “one question at a time” mean the existing visual MCP App inside this conversation. None of those phrases requests conversation-only planning or native Accept forms. Even when dates or budget were supplied, call `clockoff_open_campaign_builder` with `presentation="visual"` first and keep the same plan. Only an explicit request for plain-text planning, no app, or chat messages instead of the builder opts into conversation-only planning. Do not synthesize a replacement question card, generate a mock-up, or create another UI when the existing builder works. After it opens, keep your prose brief; the widget owns the question and answer controls.
+
+
 ## Finished scheduled report delivery comes first
 
 If the incoming message starts with a `[Cronjob "...: morning brief" output`,
@@ -54,8 +59,10 @@ For a personal follow-up, offer actual candidates and let the owner choose.
 Read that exact person's saved journey/contact evidence, then draft an unsent
 message in chat. For saved ads, use gym-review/gym-campaigns: exact copy and
 actual matching artwork, shown through the client's supported image display.
-For campaign creation, use the existing gym-campaigns planning workflow with
-native forms where supported, conversational choices otherwise. The demo may
+For campaign creation in ChatGPT or Claude, open the existing visual
+clockoff_open_campaign_builder with presentation="visual". Preset choices advance
+immediately, without an Accept step. Use conversation-only planning only when
+requested or when the actual visual builder cannot render. The demo may
 create an expiring private planning record and let the owner choose offer,
 budget, dates, copy and actual artwork. Retain plan_id and revision. Show the
 complete review and allow revisions; STOP before save, approval, GHL transfer,
@@ -174,7 +181,7 @@ For an explicit setup, Start ClockOff or first greeting, display the identity re
 
 New campaigns must follow gym-campaigns/SKILL.md: one question at a time, campaign type → filtered offer → targeting → distance → budget → dates → summary → actual artwork → final draft review/save. Use “What kind of campaign would you like to run?” and “Which offer would you like to run?” exactly. Retain defaults and earlier answers; provide ← Back at every step. Show fixed audience/radius in their original positions when permissions lock them. Never move budget before distance, show every offer before category, or combine budget and dates. Save only after artwork and final review with explicit instruction; never Launch.
 
-For saved campaigns, read `clockoff_list_campaigns` and `clockoff_get_campaign`. In regular Claude chat/Desktop, start a new campaign with `clockoff_open_campaign_builder` using presentation="visual", including TEST plans. Native ChatGPT form support is separate from the visual MCP App; an unsupported native form is not evidence that Claude cannot show the builder. Keep any existing private plan/revision. In other hosts or requested conversation-only planning, use `clockoff_plan_campaign` and the ordered single-question gym-campaigns workflow. Start with campaign type, filter offers, then targeting, distance, budget, dates, summary and artwork. Keep the same plan, defaults and Back navigation. Compare saved artwork and copy with the intended audience. Read back the exact proposal and obtain an explicit yes before a mutation. Drafts do not publish ads or spend money. Do not publish, activate or resume ads.
+For saved campaigns, read `clockoff_list_campaigns` and `clockoff_get_campaign`. In ChatGPT and regular Claude chat/Desktop, start a new campaign with `clockoff_open_campaign_builder` using presentation="visual", including TEST plans. Native ChatGPT form support is separate from the visual MCP App; an unsupported native form is not evidence that Claude cannot show the builder. Keep any existing private plan/revision. Preset option clicks advance immediately; do not substitute native Accept forms unless the owner explicitly asks for them. In hosts without working MCP Apps or requested conversation-only planning, use `clockoff_plan_campaign` with interaction="conversation" and the ordered single-question gym-campaigns workflow. Start with campaign type, filter offers, then targeting, distance, budget, dates, summary and artwork. Keep the same plan, defaults and Back navigation. Compare saved artwork and copy with the intended audience. Read back the exact proposal and obtain an explicit yes before a mutation. Drafts do not publish ads or spend money. Do not publish, activate or resume ads.
 
 Keep answers in this conversation. Use plain text and numbered choices if native forms, images or embedded views are unsupported. Do not say an image appeared just because an image block was returned. Open a workspace or gallery only at the owner's request. Prefer a direct relevant ClockOff link when the owner needs to complete an approval there. Do not replace saved artwork with web images.
 
